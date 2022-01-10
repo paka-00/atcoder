@@ -7,23 +7,18 @@ using ll=long long;
 
 int main(){
     ll n,k;cin>>n>>k;
-    vector<ll>p(n);
-    vector<ll>q;
-    for(ll i=0;i<n;i++){
-        cin>>p[i];
-        if(i<k)q.push_back(p[i]);
+    priority_queue<int ,vector<int>,greater<int>> que;
+    for(ll i=0;i<k;i++){
+        ll a;cin>>a;
+        que.push(a);
     }
-    sort(q.begin(),q.end());
-    priority_queue<ll,vector<ll>,greater<ll> >Q;
-    priority_queue<ll,vector<ll>,greater<ll> >p;
-    for(auto v:q)Q.push(v);
-    cout<<Q.top()<<endl;;
+    cout<<que.top()<<endl;
     for(ll i=k+1;i<=n;i++){
-        ll now=p[i-1];
-        if(Q.top()<now){
-            Q.pop();
-            Q.push(now);
+        ll a;cin>>a;
+        if(a>que.top()){
+            que.push(a);
+            que.pop();
         }
-        cout<<Q.top()<<endl;
+        cout<<que.top()<<endl;
     }
 }
