@@ -15,13 +15,10 @@ int main(){
         for(j=0;j<=8;j++){
             if(j==0)dp[i][j]=1;
             else if(i==0&&j>0)dp[i][j]=0;
-            else if(s[i]!=t[j]&&i*j!=0)dp[i][j]=dp[i-1][j];
-            else if(s[i]==t[j]) dp[i][j]=(dp[i-1][j]+dp[i-1][j-1])%mod;
+            else if(s[i-1]!=t[j-1]&&i*j!=0)dp[i][j]=dp[i-1][j];
+            else if(s[i-1]==t[j-1]) dp[i][j]=(dp[i-1][j]+dp[i-1][j-1])%mod;
         }
     }
-    for(i=0;i<n+1;i++){
-        for(j=0;j<9;j++){
-            cout<<dp[i][j]<<" ";}cout<<endl;}
     cout<<dp[n][8]<<endl;
 }
 
