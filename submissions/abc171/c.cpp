@@ -4,14 +4,21 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 using namespace std;
 using ll=long long;
 
-string a="zabcdefghijklmnopqrstuvwxy";
+string z="abcdefghijklmnopqrstuvwxyz";
 int main(){
     ll n;cin>>n;
-    string ans;ans+=a[n%26];
-    while(n>1){
-        ans=a[n%26]+ans;
+    stack<int>ans;
+    while(n){
+        n--;
+        ans.push(n%26);
         n/=26;
     }
-    cout<<ans<<endl;
+    while(!ans.empty()){
+        cout<<z[ans.top()];
+        ans.pop();
+    }
+    cout<<endl;
+    return 0;
+
 }
 
