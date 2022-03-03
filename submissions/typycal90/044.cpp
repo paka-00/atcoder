@@ -20,7 +20,6 @@ int main(){
         }
         else cout<<a[(x+r+n)%n]<<endl;
     }
-
 }
 
 
