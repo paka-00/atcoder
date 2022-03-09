@@ -6,7 +6,6 @@ using namespace std;
 using ll=unsigned long long;
 #define rep(i, n) for (ll i = 0; i < (ll)(n); i++)
 
-
 int main(){
     ll n,q;cin>>n>>q;
     vector<ll>a(n);
@@ -18,14 +17,19 @@ int main(){
         ans[i]=a[i+1]-a[i];
         sum+=labs(ans[i]);
     }
-    rep(i,q){
+    for(ll i=0;i<q;i++){
         ll l,r,v;cin>>l>>r>>v;
-        ll dif=labs(ans[l-2])+abs(ans[r-1]);
-        if(l>=2)
+        if(l>1){
+            sum-=labs(ans[l-2]);
             ans[l-2]+=v;
-        if(r<n)
+            sum+=labs(ans[l-2]);
+        }
+        if(r<n){
+            sum-=labs(ans[r-1]);
             ans[r-1]-=v;
-        sum+=abs(ans[l-2])+abs(ans[r-1])-dif;
+            sum+=labs(ans[r-1]);
+        }
+        
         cout<<sum<<endl;
     }
 }
