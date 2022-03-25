@@ -26,7 +26,7 @@ void bfs(int x,int y){
             cost[nx][ny]=cost[x][y]+1;
             used[nx][ny]=true;
             if(nx==gx&&ny==gy)q.clear();
-            //cout<<nx<<","<<ny<<" "<<cost[nx][ny]<<endl;
+            
         }
     }
 }
