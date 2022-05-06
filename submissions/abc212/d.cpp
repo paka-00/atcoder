@@ -13,21 +13,21 @@ const ll mod=1000000007;
 
 int main(){
     ll q;cin>>q;
-    set<ll>ball;
+    priority_queue<ll,vl, greater<ll>>ball;
     ll tmp=0;
     rep(i,q){
         int t,x;cin>>t;
         if(t==1){
             cin>>x;
-            ball.insert(x);
+            ball.push(x-tmp);
         }
         else if(t==2){
             cin>>x;
             tmp+=x;
         }
         else{
-            cout<<*ball.begin()+tmp<<endl;
-            ball.erase(*ball.begin());
+            cout<<ball.top()+tmp<<endl;
+            ball.pop();
         }
     }
 }
