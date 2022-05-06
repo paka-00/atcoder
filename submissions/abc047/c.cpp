@@ -20,4 +20,5 @@ int main(){
         tmp=v;
     }
     cout<<ans<<endl;
+    return 0;
 }
