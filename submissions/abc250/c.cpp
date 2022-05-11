@@ -13,21 +13,21 @@ const ll mod=1000000007;
 
 
 int main(){
-    int n,q;cin>>n>>q;
+    ll n,q;cin>>n>>q;
     vl a(n+1),b(n+1);
-    rep(i,n+1){
-        a[i]=i;b[i]=i;
-    }
+    rep(i,n+1){a[i]=i;b[i]=a[i];}
     rep(i,q){
-        int x;cin>>x;
-        int p0=b[x];
-        int p1=p0;
-        if(p0!=n)p1++;
-        else p1--;
-        int v0=a[p0],v1=a[p1];
-        swap(a[p0],a[p1]);
-        swap(b[v0],b[v1]);
-    }
-    for(int i=1;i<=n;i++)cout<<a[i]<<" ";cout<<endl;
+        ll x;cin>>x;
+        ll pos1=b[x];
+        ll pos2;
+        if(pos1==n)pos2=n-1;
+        else pos2=b[x]+1;
+        ll y=a[pos2];
+
+        swap(a[pos1],a[pos2]);
+        swap(b[x],b[y]);
+        
+    }for(int i=1;i<=n;i++)cout<<a[i]<<" ";
+        cout<<endl;
 }
 
