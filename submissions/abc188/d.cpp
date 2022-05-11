@@ -10,6 +10,7 @@ using vl=vector<ll>;
 using vvl=vector<vector<ll>>;
 using ld=long double;
 using pll =pair<ll,ll>;
+#define sort(v)sort(v.begin(),v.end())
 #define rep(i,n)for(ll i=0;i<(ll)(n);i++)
 const ll mod=1000000007;
 
@@ -24,7 +25,7 @@ int main(){
         e.push_back({a,c});
         e.push_back({b+1,-c});
     }
-    sort(e.begin(),e.end());
+    sort(e);
     ll m=0,t=0;
     ll ans=0;
     for(auto v:e){
