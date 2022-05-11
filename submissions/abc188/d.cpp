@@ -10,15 +10,17 @@ using vl=vector<ll>;
 using vvl=vector<vector<ll>>;
 using ld=long double;
 using pll =pair<ll,ll>;
+using vpll=vector<pair<ll,ll>>;
 #define sort(v)sort(v.begin(),v.end())
 #define rep(i,n)for(ll i=0;i<(ll)(n);i++)
+
 const ll mod=1000000007;
 
 
 int main(){
     ll n,C;cin>>n>>C;
     ll a,b,c;
-    vector<pll>e;
+    vpll e;
     vl d(n+1);
     rep(i,n){
         cin>>a>>b>>c;
