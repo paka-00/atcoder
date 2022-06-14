@@ -37,6 +37,4 @@ int main(){
     }
     dfs(1,-1);
     for(auto v:ans)cout<<v<<" ";cout<<endl;
-    
-
 }
